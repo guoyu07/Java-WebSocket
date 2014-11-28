@@ -73,9 +73,9 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 	}
 
 	public WebSocketClient( URI serverUri , Draft protocolDraft , Map<String,String> httpHeaders , int connectTimeout ) {
-		if( serverUri == null ) {
+		/*if( serverUri == null ) {
 			throw new IllegalArgumentException();
-		} else if( protocolDraft == null ) {
+		} else */if( protocolDraft == null ) {
 			throw new IllegalArgumentException( "null as draft is permitted for `WebSocketServer` only!" );
 		}
 		this.uri = serverUri;

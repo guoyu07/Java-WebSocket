@@ -4,9 +4,9 @@
     <title>WebSocket Chat Client</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <script type="text/javascript" src="prototype.js"></script>
+    <script typ="text/javascript" src="prototype.js"></script>
 
-    <script type="text/javascript">
+    <script typ="text/javascript">
         document.observe("dom:loaded", function() {
             function log(text) {
                 $("log").innerHTML = (new Date).getTime() + ": " + (!Object.isUndefined(text) && text !== null ? text.escapeHTML() : "null") + $("log").innerHTML;
@@ -59,8 +59,8 @@
     </script>
   </head>
   <body>
-      <form id="uriForm"><input type="text" id="uri" value="ws://localhost:8887" style="width:200px;"> <input type="submit" id="connect" value="Connect"><input type="button" id="disconnect" value="Disconnect" disabled="disabled"></form><br>
-      <form id="sendForm"><input type="text" id="textField" value="" style="width:200px;"> <input type="submit" value="Send"></form><br>
+      <form id="uriForm"><input typ="text" id="uri" value="ws://localhost:8887" style="width:200px;"> <input typ="submit" id="connect" value="Connect"><input typ="button" id="disconnect" value="Disconnect" disabled="disabled"></form><br>
+      <form id="sendForm"><input typ="text" id="textField" value="" style="width:200px;"> <input typ="submit" value="Send"></form><br>
       <form><textarea id="log" rows="30" cols="100" style="font-family:monospace; color:red;"></textarea></form><br>
   </body>
 </html>
