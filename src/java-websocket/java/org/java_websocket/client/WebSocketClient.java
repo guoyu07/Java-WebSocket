@@ -107,6 +107,7 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 		if( writeThread != null )
 			throw new IllegalStateException( "WebSocketClient objects are not reuseable" );
 		writeThread = new Thread( this );
+        writeThread.setDaemon(true);
 		writeThread.start();
 	}
 
@@ -175,6 +176,7 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 		}
 
 		writeThread = new Thread( new WebsocketWriteThread() );
+        writeThread.setDaemon(true);
 		writeThread.start();
 
 		byte[] rawbuffer = new byte[ WebSocketImpl.RCVBUF ];
@@ -346,7 +348,6 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 		@Override
 		public void run() {
             // 设置为守护线程
-            Thread.currentThread().setDaemon(true);
 			Thread.currentThread().setName( "WebsocketWriteThread" );
 			try {
 				while ( !Thread.interrupted() ) {
