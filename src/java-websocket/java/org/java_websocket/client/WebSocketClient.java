@@ -345,6 +345,8 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 	private class WebsocketWriteThread implements Runnable {
 		@Override
 		public void run() {
+            // 设置为守护线程
+            Thread.currentThread().setDaemon(true);
 			Thread.currentThread().setName( "WebsocketWriteThread" );
 			try {
 				while ( !Thread.interrupted() ) {
